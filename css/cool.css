@@ -1,0 +1,59 @@
+.demo{
+	padding: 1em 0;
+	background: url("../images/background.jpg");
+	background-repeat: no-repeat;
+	/*background-size: 100% auto;*/
+	background-size: cover;
+}
+.box{
+	position: relative;
+	/*设置透视点*/
+	perspective: 1000px;
+}
+.box .box-img{
+	/*图片初始的旋转，0度*/
+	transform: rotateY(0);
+	/*设置过渡*/
+	transition: all 0.5s ease-in-out 0s;
+}
+.box:hover .box-img{
+	transform: rotateY(-90deg);
+}
+.box .box-img img{
+	width: 100%;
+	height: auto;
+}
+.box .box-content{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.7);
+	padding: 60px 20px;
+	text-align: center;
+	transform: rotateY(90deg);
+	transition: all 0.5s ease-in-out 0s;
+}
+.box:hover .box-content{
+	transform: rotateY(0);
+}
+.box .title{
+	font-size: 30px;
+	color: white;
+	/*文本形变*/
+	text-transform: uppercase;
+}
+.box .decription{
+	font-size: 14px;
+	line-height: 24px;
+	color: white;
+}
+.box .title:after,
+.box .decription:after{
+	content: "";
+	width: 80%;
+	display: block;
+	border-bottom: 1px solid #fff;
+	margin: 15px auto;
+}
